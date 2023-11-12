@@ -70,7 +70,7 @@ for (let i = 0; i < tileCount; i++){
     colorsPicklist.splice(randomIndex, 1);
 
     console.log(color);
-    tilesContainer.appendChild(Tile);
+    tilesContainer.appendChild(tile);
 }
 
 console.log(colorsPicklist);
