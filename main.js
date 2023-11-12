@@ -13,6 +13,15 @@ function buildTile(color){
 
     element.classList.add("tile");
     element.setAttribute("data-color", color);
+    element.setAttribute("data-revealed", "false");
+
+    element.addEventListener("click", () => {
+        if(awaitingEndOfMove){
+            return;
+        }
+        
+        element.style.backgroundColor = color;
+    });
 
     return element;
 
