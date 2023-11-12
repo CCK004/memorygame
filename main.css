@@ -2,3 +2,11 @@ body {
     background: #333;
     margin: 0;
 }
+
+.tiles{
+    margin: 48px auto;
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 16px;
+}
