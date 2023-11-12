@@ -14,10 +14,10 @@ function buildTile(color){
 
     element.classList.add("tile");
     element.setAttribute("data-color", color);
-    element.setAttribute("data-revealed", color);
+    element.setAttribute("data-revealed", "false");
 
     element.addEventListener("click", () => {
-        if(awaitingEndOfMove){
+        if(awaitingEndOfMove || revealed == "true" || element === activeTile){
             return;
         }
         
@@ -32,8 +32,11 @@ function buildTile(color){
         const colorToMach = activeTile.getAttribute("data-color");
         
         if (colorToMach === color){
-            active = null;
-            awaitingEndOfMove = null;
+            activeTile.setAttribute("data-revealed", "true");
+            element.setAttribute("data-revealed", "true")
+            
+            awaitingEndOfMove = false;
+            activeTile = null;
             revealedCount += 2;
 
             if (revealedCount === tileCount) {
