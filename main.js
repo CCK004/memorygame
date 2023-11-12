@@ -17,7 +17,10 @@ function buildTile(color){
     element.setAttribute("data-revealed", "false");
 
     element.addEventListener("click", () => {
-        if(awaitingEndOfMove || revealed == "true" || element === activeTile){
+        const revealed = element.getAttribute("data-revealed");
+        if(awaitingEndOfMove 
+            ||revealed === "true" 
+            ||element == activeTile){
             return;
         }
         
