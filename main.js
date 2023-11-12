@@ -13,7 +13,6 @@ function buildTile(color){
 
     element.classList.add("tile");
     element.setAttribute("data-color", color);
-    element.setAttribute("data-revealed", "false");
 
     element.addEventListener("click", () => {
         if(awaitingEndOfMove){
@@ -28,6 +27,13 @@ function buildTile(color){
             return;
         }
 
+        const colorToMach = activeTile.getAttribute("data-color");
+        if (colorToMach === color){
+            active = null;
+            awaitingEndOfMove = null;
+            revealedCount += 2;
+        }
+
         awaitingEndOfMove = true;
 
         setTimeout(()=> {
@@ -36,7 +42,6 @@ function buildTile(color){
 
             awaitingEndOfMove = null;
             activeTile = null;
-
         }, 1000)
     });
 
