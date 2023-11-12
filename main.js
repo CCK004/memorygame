@@ -8,11 +8,13 @@ let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
 
+
 function buildTile(color){
     const element = document.createElement("div");
 
     element.classList.add("tile");
     element.setAttribute("data-color", color);
+    element.setAttribute("data-revealed", color);
 
     element.addEventListener("click", () => {
         if(awaitingEndOfMove){
