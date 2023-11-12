@@ -28,10 +28,17 @@ function buildTile(color){
         }
 
         const colorToMach = activeTile.getAttribute("data-color");
+        
         if (colorToMach === color){
             active = null;
             awaitingEndOfMove = null;
             revealedCount += 2;
+
+            if (revealedCount === tileCount) {
+                alert("You win! Refresh to play again.")
+            }
+
+            return;
         }
 
         awaitingEndOfMove = true;
