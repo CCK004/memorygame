@@ -27,7 +27,7 @@ for (let i = 0; i < tileCount; i++){
     colorsPicklist.splice(randomIndex, 1);
 
     console.log(color);
-    document.body.appendChild(Tile);
+    tilesContainer.appendChild(Tile);
 }
 
 console.log(colorsPicklist);
