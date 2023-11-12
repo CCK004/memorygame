@@ -33,6 +33,10 @@ function buildTile(color){
         setTimeout(()=> {
             element.style.backgroundColor = null;
             activeTile.style.backgroundColor = null;
+
+            awaitingEndOfMove = null;
+            activeTile = null;
+
         }, 1000)
     });
 
